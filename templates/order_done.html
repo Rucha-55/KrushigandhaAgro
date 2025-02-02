@@ -1,0 +1,64 @@
+{% include "header.html" %}
+
+<style>
+    body {
+        padding-top: 100px;
+        background-color: #f9f9f9;
+        font-family: Arial, sans-serif;
+    }
+
+    .thank-you-container {
+        text-align: center;
+        padding: 50px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .thank-you-message {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    .thank-you-btn {
+        background-color: #28a745;
+        color: #fff;
+        font-size: 18px;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .thank-you-btn:hover {
+        background-color: #218838;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .thank-you-btn {
+            width: 100%; /* Make the button full width on smaller screens */
+            padding: 15px; /* Add padding for larger click area */
+            font-size: 20px; /* Increase font size for better readability */
+        }
+    }
+</style>
+
+<div class="container">
+    <div class="thank-you-container">
+        <div class="thank-you-message">
+            <h2>Thank you for your order!</h2>
+            <p>Dear {{ customer_name }},</p>
+            <p>Your order has been successfully placed. We will process it and notify you once it's ready for delivery.</p>
+            <p>We appreciate your business and look forward to serving you again!</p>
+        </div>
+        <a href="/overall" class="thank-you-btn">Go back to Home</a>
+    </div>
+</div>
+
+{% include "footer.html" %}

@@ -1,0 +1,255 @@
+{% include "header.html" %}
+
+<style>
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-custom {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .card:hover .card-img-custom {
+        transform: scale(1.1);
+    }
+
+    body {
+        padding-top: 120px;
+    }
+
+    .container {
+        margin-top: 0;
+    }
+
+    .card {
+        border-radius: 10px;
+        overflow: hidden;
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .card-img-custom {
+        height: 180px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .btn-primary {
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+    .btn-primary:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+
+    /* Modal Styling */
+    .modal-content {
+        padding: 20px;
+        max-height: 80vh; /* Limit modal height to 80% of viewport */
+        overflow-y: auto; /* Add scroll for overflowing content */
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-header {
+        background-color: #28a745;
+        color: white;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .modal-footer {
+        background-color: #f8f9fa;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    /* Order Form */
+    .order-form input,
+    .order-form button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 1rem;
+    }
+
+    .order-form input:focus,
+    .order-form button:focus {
+        outline: none;
+        border-color: #28a745;
+        box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+    }
+
+    .modal-dialog {
+        max-width: 600px;
+    }
+</style>
+
+<div class="container mt-4">
+    <div class="row g-3">
+        <!-- Card 1 -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card">
+                <img src="/static/image/cattle_feed.jpg" class="card-img-top card-img-custom" alt="Krushigandha Dairy Special">
+                <div class="card-body">
+                    <h5 class="card-title">Krushigandha Dairy Special (By Pass)</h5>
+                    <ul>
+                        <li>Contains By Pass Protein & Fat to increase absorption.</li>
+                        <li>3.5% Fat, 25-28% Crude Protein, other minerals.</li>
+                        <li>Beneficial for cows of foreign breed.</li>
+                        <li>Recommended for high-yielding dairy breeds.</li>
+                    </ul>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-product-name="Krushigandha Dairy Special (By Pass)">Order Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card">
+                <img src="/static/image/cattle_feed.jpg" class="card-img-top card-img-custom" alt="Krushigandha Dairy Special">
+                <div class="card-body">
+                    <h5 class="card-title">Krushigandha Dairy Special (By Pass)</h5>
+                    <ul>
+                        <li>Contains By Pass Protein & Fat to increase absorption.</li>
+                        <li>3.5% Fat, 25-28% Crude Protein, other minerals.</li>
+                        <li>Beneficial for cows of foreign breed.</li>
+                        <li>Recommended for high-yielding dairy breeds.</li>
+                    </ul>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-product-name="Krushigandha Dairy Special (By Pass)">Order Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card">
+                <img src="/static/image/cattle_feed.jpg" class="card-img-top card-img-custom" alt="Krushigandha Dairy Special">
+                <div class="card-body">
+                    <h5 class="card-title">Krushigandha Dairy Special (By Pass)</h5>
+                    <ul>
+                        <li>Contains By Pass Protein & Fat to increase absorption.</li>
+                        <li>3.5% Fat, 25-28% Crude Protein, other minerals.</li>
+                        <li>Beneficial for cows of foreign breed.</li>
+                        <li>Recommended for high-yielding dairy breeds.</li>
+                    </ul>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-product-name="Krushigandha Dairy Special (By Pass)">Order Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card">
+                <img src="/static/image/cattle_feed.jpg" class="card-img-top card-img-custom" alt="Krushigandha Dairy Special">
+                <div class="card-body">
+                    <h5 class="card-title">Krushigandha Dairy Special (By Pass)</h5>
+                    <ul>
+                        <li>Contains By Pass Protein & Fat to increase absorption.</li>
+                        <li>3.5% Fat, 25-28% Crude Protein, other minerals.</li>
+                        <li>Beneficial for cows of foreign breed.</li>
+                        <li>Recommended for high-yielding dairy breeds.</li>
+                    </ul>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-product-name="Krushigandha Dairy Special (By Pass)">Order Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card">
+                <img src="/static/image/cattle_feed.jpg" class="card-img-top card-img-custom" alt="Krushigandha Dairy Special">
+                <div class="card-body">
+                    <h5 class="card-title">Krushigandha Dairy Special (By Pass)</h5>
+                    <ul>
+                        <li>Contains By Pass Protein & Fat to increase absorption.</li>
+                        <li>3.5% Fat, 25-28% Crude Protein, other minerals.</li>
+                        <li>Beneficial for cows of foreign breed.</li>
+                        <li>Recommended for high-yielding dairy breeds.</li>
+                    </ul>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-product-name="Krushigandha Dairy Special (By Pass)">Order Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card">
+                <img src="/static/image/cattle_feed.jpg" class="card-img-top card-img-custom" alt="Krushigandha Dairy Special">
+                <div class="card-body">
+                    <h5 class="card-title">Krushigandha Dairy Special (By Pass)</h5>
+                    <ul>
+                        <li>Contains By Pass Protein & Fat to increase absorption.</li>
+                        <li>3.5% Fat, 25-28% Crude Protein, other minerals.</li>
+                        <li>Beneficial for cows of foreign breed.</li>
+                        <li>Recommended for high-yielding dairy breeds.</li>
+                    </ul>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-product-name="Krushigandha Dairy Special (By Pass)">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Order Modal -->
+<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderModalLabel">Order Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="order-form" id="orderForm" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" id="productName" name="productName">
+
+                    <label for="quantity">Quantity (in kg):</label>
+                    <input type="number" id="quantity" name="quantity" required min="1">
+
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="address">Shipping Address:</label>
+                    <input type="text" id="address" name="address" required>
+
+                    <label for="phone">Contact Number:</label>
+                    <input type="text" id="phone" name="phone" required placeholder="Enter your contact number">
+
+                    <label for="whatsapp">WhatsApp Number:</label>
+                    <input type="text" id="whatsapp" name="whatsapp" required placeholder="Enter your WhatsApp number">
+
+                    <button type="submit" class="btn btn-primary">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Set product name automatically when the "Order Now" button is clicked
+    const orderButtons = document.querySelectorAll('.btn-primary[data-bs-toggle="modal"]');
+    orderButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const productName = this.getAttribute('data-product-name');
+            document.getElementById('productName').value = productName;
+        });
+    });
+</script>
+
+{% include "footer.html" %}

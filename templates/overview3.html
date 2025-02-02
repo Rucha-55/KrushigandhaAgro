@@ -1,0 +1,100 @@
+{% include "header.html" %}
+
+  <div class="container my-5 text-center content-offset">
+    <style>
+        /* Custom gray background for the whole page */
+  /* Custom gray background for the whole page */
+  body {
+    background-color: #f8f9fa;
+  }
+
+  /* Card frame and shadow for each content box */
+  .content-box {
+    margin-top: 70px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Hover effect for content box */
+  .content-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Add some margin to the icon-circle */
+  .icon-circle {
+    border-radius: 50%;
+    padding: 20px;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+  }
+
+  /* Styling for the section title */
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+</style>
+
+    <div class="row justify-content-center">
+      <!-- Column 1 -->
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <div class="content-box text-center">
+          <div class="icon-circle">
+            <img src="/static/image/handshake.png" alt="Reasons Icon">
+          </div>
+          <h4 class="section-title">Reasons to Choose Krushigandha Cattle Feed</h4>
+          <p>We offer cattle feed products that are thoroughly hygienic and safe for cattle. Our features include:</p>
+          <ul class="text-start">
+            <li>State-of-the-art technology</li>
+            <li>Stringent quality norms</li>
+            <li>Experienced professionals</li>
+            <li>Fully equipped R&D unit</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Column 2 -->
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <div class="content-box text-center">
+          <div class="icon-circle">
+            <img src="/static/image/quality.png" alt="Quality Icon">
+          </div>
+          <h4 class="section-title">Quality Policy</h4>
+          <p>At Krushigandha, we are committed to delivering top-quality products. Our policies ensure:</p>
+          <ul class="text-start">
+            <li>ISI and UKAS certifications</li>
+            <li>Safe and hygienic waste disposal</li>
+            <li>Durability and safety compliance</li>
+            <li>In-house quality control checks</li>
+            <li>In-house quality control checks</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Column 3 -->
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <div class="content-box text-center">
+          <div class="icon-circle">
+            <img src="/static/image/infra.png" alt="Infrastructure Icon">
+          </div>
+          <h4 class="section-title">Infrastructure</h4>
+          <p>Our ultra-modern facilities ensure high-quality production with efficient machinery, including:</p>
+          <ul class="text-start">
+            <li>Stitching machines</li>
+            <li>Sealing machines</li>
+            <li>Weighing balances</li>
+            <li>Automatic form-filling machines</li>
+            <li>Automatic form-filling machines</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>   
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+  {% include "footer.html" %}

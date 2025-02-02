@@ -1,0 +1,123 @@
+{% include "header.html" %}
+
+<style>
+    body {
+        background-color: #f9f9f9;
+        font-family: Arial, sans-serif;
+        padding-top: 80px; /* Added padding to prevent content from being hidden behind the navbar */
+    }
+
+    .container {
+        margin-top: 50px;
+    }
+
+    .current-openings {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .current-openings h4 {
+        color: #28a745; /* Changed the color to green */
+    }
+
+    .submit-form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Green color for submit button */
+    .btn-submit {
+        background-color: #28a745; /* Green color */
+        color: #fff;
+        font-weight: bold;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .btn-submit:hover {
+        background-color: #218838; /* Darker green on hover */
+    }
+
+    /* Other styling for form and current openings section */
+    .form-control, .form-select {
+        margin-bottom: 15px;
+    }
+
+</style>
+
+<div class="container">
+    <div class="row">
+        <!-- Current Openings Section -->
+        <div class="col-md-6">
+            <div class="current-openings">
+                <h4>Current Openings</h4>
+                <ul>
+                    <li><strong>WANTED:</strong> Senior Accountant, minimum 10 years of experience, capable of finalizing balance sheet, full tax knowledge, and GST compliance.</li>
+                    <li><strong>URGENT:</strong> Senior Accountant needed, minimum experience of 8-10 years.</li>
+                    <li><strong>Current Vacancy:</strong> URGENT marketing manager for Madhya Pradesh & Uttarakhand. Minimum 5 years of experience.</li>
+                    <li>4-6 years experienced marketing managers for areas like Bihar, Haryana, Punjab, West Bengal, Rajasthan, etc.</li>
+                    <li>Walk-in interviews: 84/54, Jarib Chowki, G.T. Road, Kanpur | Monday to Saturday (10 AM to 11 AM).</li>
+                    <li>For more information, contact: <strong>+91 923 5425 981</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Submit Form Section -->
+        <div class="col-md-6">
+            <div class="submit-form">
+                <h4 class="mb-4" style="color:green;">Submit Your Resume to Apply</h4>
+                <form method="POST" action="{% url 'carrier' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <label for="post">Post:</label>
+                    <select name="post" class="form-select" required>
+                        <option value="Senior Accountant">Senior Accountant</option>
+                        <option value="Marketing Manager">Marketing Manager</option>
+                        <option value="Junior Accountant">Junior Accountant</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                
+                    <label for="experience">Experience:</label>
+                    <input type="text" name="experience" required class="form-control">
+                
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" required class="form-control">
+                
+                    <label for="gender">Gender:</label>
+                    <select name="gender" class="form-select" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" required class="form-control">
+                
+                    <label for="mobile">Mobile:</label>
+                    <input type="text" name="mobile" required class="form-control">
+                
+                    <label for="city">City:</label>
+                    <input type="text" name="city" required class="form-control">
+                
+                    <label for="resume">Resume:</label>
+                    <input type="file" name="resume" required class="form-control">
+                
+                    {% if error_message %}
+                        <p style="color: red;">{{ error_message }}</p>
+                    {% endif %}
+                
+                    <button type="submit" class="btn btn-submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Include Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+{% include "footer.html" %}

@@ -1,0 +1,139 @@
+{% include "header.html" %}
+
+<style>
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    }
+
+    .card:hover {
+        transform: scale(1.05); /* Slight zoom-in effect */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow for emphasis */
+    }
+
+    .card-img-custom {
+        transition: transform 0.3s ease-in-out; /* Smooth image zoom-in effect */
+    }
+
+    .card:hover .card-img-custom {
+        transform: scale(1.1); /* Slight zoom effect for the image */
+    }
+
+    body {
+        padding-top: 120px; /* Adjust based on the height of your navbar */
+    }
+
+    .container {
+        margin-top: 0; /* Remove the margin-top since padding-top in body will handle the spacing */
+    }
+
+    /* Adding border-radius to cards for rounded corners */
+    .card {
+        border-radius: 10px;
+        overflow: hidden;
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Customizing card image */
+    .card-img-custom {
+        height: 180px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    /* Card body adjustments */
+    .card-body {
+        padding: 1rem;
+    }
+
+    /* Customizing the 'Learn More' button color to green */
+    .btn-primary {
+        background-color: #28a745; /* Green background color */
+        border-color: #28a745; /* Green border color */
+        color: white; /* Ensures the button text is white */
+    }
+
+    .btn-primary:hover {
+        background-color: #218838; /* Darker green on hover */
+        border-color: #1e7e34; /* Darker border on hover */
+        color: white; /* Ensures the button text stays white on hover */
+    }
+
+    /* Adjusting the product name visibility */
+    .card-title {
+        color: #333; /* Set text color to a dark shade for better visibility */
+        font-size: 1.25rem; /* Ensure the font size is large enough */
+        font-weight: bold; /* Make the product name bold */
+        text-align: center; /* Center the text for better alignment */
+    }
+
+    /* Additional adjustment for text visibility */
+    .card-text {
+        color: #555; /* Lighter shade for description */
+    }
+
+    /* Styling the feature list */
+    ul.features-list {
+        list-style-type: disc; /* Set bullet points */
+        padding-left: 20px; /* Add padding to space out bullets */
+        margin-top: 10px;
+        color: #333; /* Dark text for contrast */
+    }
+
+    ul.features-list li {
+        font-size: 1rem; /* Ensuring readable text size for features */
+        color: #333; /* Color the text dark for contrast */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 767px) {
+        .card-img-custom {
+            height: 150px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+        }
+
+        ul.features-list {
+            font-size: 0.9rem; /* Slightly smaller font size for mobile */
+        }
+
+        ul.features-list li {
+            white-space: normal; /* Allow line breaks within list items */
+        }
+
+        .btn {
+            font-size: 0.85rem;
+            padding: 0.4rem 0.8rem;
+        }
+    }
+</style>
+
+<div class="container mt-4">
+    <div class="row g-3">
+        {% for product in products %}
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card">
+                <img src="{{ product.image.url }}" class="card-img-top card-img-custom" alt="{{ product.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    {% comment %} <p class="card-text">{{ product.description }}</p> <!-- Added description here --> {% endcomment %}
+
+                    <!-- Features List -->
+                    <ul class="features-list">
+                        {{ product.features|safe }}  <!-- Renders HTML safely -->
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+{% include "footer.html" %}
