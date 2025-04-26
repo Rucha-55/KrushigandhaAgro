@@ -1,3 +1,4 @@
 Django>=4.2
 gunicorn
-django-tinymce
+whitenoise==6.6.0
+django-tinymce==4.2.0
